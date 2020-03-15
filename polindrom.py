@@ -18,8 +18,3 @@ def longest_palindrome(str):
             long = candidate
 
     return print(long)
-
-
-str = 'ллолрарараорло'
-
-longest_palindrome(str)
