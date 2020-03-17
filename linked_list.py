@@ -48,12 +48,12 @@ class List:
             while item_index != index and current is not None:
                 current = current.next
                 item_index += 1
+            if current:
+                return print(current.value)
+            else:
+                return print('Такого элемента нет')
         else:
             return print('Список пуст')
-        if current is not None:
-            return print(current.value)
-        else:
-            return print('Такого элемента нет')
 
     def remove(self, value):
         if self.first:
@@ -86,19 +86,5 @@ class List:
                         previous_current = current
                         current = current.next
                         item_index += 1
-
-
-
-spisok = List()
-
-spisok.add_to_end(1)
-spisok.add_to_end(2)
-spisok.add_to_end(3)
-spisok.add_so_start(5)
-
-
-spisok.remove_by_index(5)
-
-spisok.print()
 
 
