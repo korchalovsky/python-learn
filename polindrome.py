@@ -6,7 +6,7 @@ def get_palindrome(string, start, end):
         start -= 1
         end += 1
 
-    return str[start:end + 1]
+    return string[start:end + 1]
 
 
 def longest_palindrome(string):
