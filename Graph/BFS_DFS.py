@@ -37,8 +37,9 @@ def dfs(graph_n, elem):
     return visited
 
 
-print(bfs(graph_directed, 'A'))
 print(bfs(graph_undirected, 1))
+print(bfs(graph_directed, "A"))
 
-print(dfs(graph_directed, 'A'))
 print(dfs(graph_undirected, 1))
+print(dfs(graph_directed, "A"))
+
