@@ -95,5 +95,5 @@ print(table[342], '- Значение по ключу')
 print(hash_function("636", 32), "- это коллизия")
 print(hash_function("744", 32), "- это коллизия")
 
-print(table.get_keys(), "-Список ключей")
-print(table.get_values(), "-Список значений")
+print(table.get_keys(), "- Список ключей")
+print(table.get_values(), "- Список значений")
