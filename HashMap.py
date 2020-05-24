@@ -67,9 +67,36 @@ class HashMap:
         return result
 
     def print(self):
+        count = 0
         for i in range(self.size):
             if self.keys[i] is not None:
                 print(self.keys[i], ":", self.values[i])
+                count += 1
+        if count == 0:
+            print("Хэш-таблица пуста")
+
+    def remove(self, key):
+        hash = hash_function(key, self.size)
+        if self.keys[hash] == key:
+            self.keys[hash] = None
+            self.values[hash] = None
+            return
+        else:
+            rehash = rehash_function(hash, self.size)
+            while self.keys[rehash] != key:
+                rehash = rehash_function(rehash, self.size)
+                if rehash == hash:
+                    return "Такого ключа нет в словаре"
+            self.keys[rehash] = None
+            self.values[rehash] = None
+
+    def clear(self):
+        for i in range(self.size):
+            if self.keys[i] is not None:
+                self.keys[i] = None
+            if self.values[i] is not None:
+                self.values[i] = None
+        return print("Хэш-таблица очищена")
 
 
 table = HashMap()
@@ -88,6 +115,7 @@ table.add_item("636", 32)
 table.add_item("744", "Алло")
 table["Кек"] = 567
 
+table.remove("B")
 table.print()
 
 print(table["744"], '- Значение по ключу')
@@ -97,3 +125,6 @@ print(hash_function("744", 32), "- это коллизия")
 
 print(table.get_keys(), "- Список ключей")
 print(table.get_values(), "- Список значений")
+
+table.clear()
+table.print()
