@@ -30,6 +30,7 @@ def find_min_weight_item(items):
             min_weight_item = i
     return min_weight_item
 
+
 def dijkstra(graph, weight_graph):
     item = find_min_weight_item(weight_graph)
     while item is not None:
